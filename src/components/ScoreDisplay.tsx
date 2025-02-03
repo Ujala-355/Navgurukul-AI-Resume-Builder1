@@ -21,7 +21,7 @@ const ScoreDisplay: React.FC<ScoreDisplayProps> = ({ score }) => {
     return 'Requires significant improvements to be competitive.';
   };
 
-  const color = getScoreColor(score.score);
+  const color = getScoreColor(score.analysis.atsScore);
 
   return (
     <div className="space-y-8">
@@ -32,11 +32,11 @@ const ScoreDisplay: React.FC<ScoreDisplayProps> = ({ score }) => {
         >
           <Award className="absolute top-6 w-8 h-8" style={{ color }} />
           <span className="text-5xl font-bold" style={{ color }}>
-            {score.score}
+            {score.analysis.atsScore}
           </span>
         </div>
         <p className="text-xl text-gray-800 max-w-md text-center font-medium">
-          {getFeedback(score.score)}
+          {getFeedback(score.analysis.atsScore)}
         </p>
       </div>
 
@@ -47,7 +47,7 @@ const ScoreDisplay: React.FC<ScoreDisplayProps> = ({ score }) => {
             Strengths
           </h3>
           <ul className="space-y-3">
-            {score.strengths.map((strength, index) => (
+            {score.analysis.strengths.map((strength, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-green-900">{strength}</span>
@@ -62,7 +62,7 @@ const ScoreDisplay: React.FC<ScoreDisplayProps> = ({ score }) => {
             Suggested Improvements
           </h3>
           <ul className="space-y-3">
-            {score.improvements.map((improvement, index) => (
+            {score.analysis.improvements.map((improvement, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-amber-600 mr-2">•</span>
                 <span className="text-amber-900">{improvement}</span>

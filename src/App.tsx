@@ -27,11 +27,7 @@ function App() {
         },
       });
 
-      setScore({
-        score: response.data.atsScore.atsScore,
-        strengths: response.data.atsScore.strengths,
-        improvements: response.data.atsScore.improvements
-      });
+      setScore(response.data.atsScore);
     } catch (err) {
       setError('Failed to analyze resume. Please try again.');
       console.error('Error:', err);
@@ -67,13 +63,13 @@ function App() {
       <main className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="p-8">
-            <div className="text-center mb-8">
+            {/* <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Enhance Your Resume</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Upload your resume and let our AI analyze its strength, providing you with actionable insights 
                 and optimization suggestions.
               </p>
-            </div>
+            </div> */}
 
             <div className="max-w-2xl mx-auto">
               <FileUpload onFileUpload={handleFileUpload} />
@@ -108,12 +104,12 @@ function App() {
             <div className="border-t border-gray-100 bg-gradient-to-b from-white to-blue-50 p-8">
               <div className="max-w-2xl mx-auto">
                 <ScoreDisplay score={score} />
-                {/* <div className="mt-8 flex justify-center">
-                  <button className="flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all transform hover:scale-105 shadow-md">
+                <div className="mt-8 flex justify-center">
+                  {/* <button className="flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all transform hover:scale-105 shadow-md">
                     <Download className="w-5 h-5 mr-2" />
                     Download Optimization Report
-                  </button>
-                </div> */}
+                  </button> */}
+                </div>
               </div>
             </div>
           )}
