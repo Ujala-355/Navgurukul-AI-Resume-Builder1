@@ -37,7 +37,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex flex-col">
       <header className="bg-white shadow-sm border-b border-blue-100">
         <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -63,13 +63,13 @@ function App() {
       <main className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="p-8">
-            {/* <div className="text-center mb-8">
+            <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Enhance Your Resume</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Upload your resume and let our AI analyze its strength, providing you with actionable insights 
                 and optimization suggestions.
               </p>
-            </div> */}
+            </div>
 
             <div className="max-w-2xl mx-auto">
               <FileUpload onFileUpload={handleFileUpload} />
@@ -116,7 +116,7 @@ function App() {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-100 mt-12">
+      <footer className="bg-white border-t border-gray-100 mt-auto">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-500 text-sm">
             © {new Date().getFullYear()} Navgurukul AI Resume Builder. All rights reserved.
